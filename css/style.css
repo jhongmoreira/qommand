@@ -1891,3 +1891,103 @@ hr {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+background: linear-gradient(-45deg, #001f3f, #0074D9, #001f3f);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  z-index: 9999;
+
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#splash img {
+max-width: 300px;
+  height: auto;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#content {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.waves {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100px;
+  max-height: 150px;
+  bottom: 0;
+  right: 0;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+
+.parallax>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+}
